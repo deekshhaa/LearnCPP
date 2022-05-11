@@ -53,6 +53,13 @@
   - [Time Complexity](#time-complexity-7)
   - [Space Complexity](#space-complexity-7)
 
+-[Check Palindrome](#check-palindrome)
+ - [Examples](#examples-7)
+ - [Algorithm](#algorithm-7)
+ - [Time Complexity](#time-complexity-8)
+ - [Space Complexity](#space-complexity-8)
+ 
+ 
 
 ## Inversion Count
 
@@ -414,6 +421,53 @@ Example 2 : Input: n = 27
 ## Time Complexity and Space Complexity
 - Time Complexity : O(N)
 - Space Complexity : O(N) here N is the recursion stack space.
+
+
+
+# Check Palindrome
+
+You are given a string s, check whether the string is palindrome or not through recursion. Write a function and return true if yes and false if no.
+Palindrome: A palindrome is a word, number, phrase, or other sequence of characters which reads the same backward as forward, such as madam or racecar.
+
+### Examples
+Example 1 : INPUT: learncpp
+            OUTPUT: false
+
+Example 2 : INPUT: learncppcnrael
+            OUTPUT: true
+
+
+### Algorithm
+
+  - Take the input string Str[] and calculate its length.
+
+  -  If length is 0 then set result=1.
+
+   - Else set result=checkPalindrome(Str, 0, length - 1) where 0 is first index and lenght - 1 is last index
+
+   - Function checkPalindrome(char str[], int first, int last) returns 0 if any character does not match with its corresponding character in the string.
+
+   - If indexes first and last are the same then string has one character, then return 1.
+
+   - If not then check the remaining characters except end characters by first++, last-- and recursive call checkPalindrome(str, first, last).
+
+   -  At the end of all recursions we will get a result.
+
+   - If it is 1 then the input string is palindrome.
+
+   - Else input string is not a palindrome.
+
+   - Print result in main.
+
+
+
+### Time Complexity
+  O(n) where n is the size of the string.
+   
+ 
+### Space Complexity
+   O(1) because we don’t create any auxiliary space here.
+   
 
 
 
